@@ -1,13 +1,194 @@
-*{
-    padding:0;
-    margin: 0;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+/* 
+// <weight>: Use a value from 100 to 900
+// <uniquifier>: Use a unique and descriptive class name
+
+.montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+/* 
+.montserrat-<uniquifier> {
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	outline: none;
 }
 
-:root{
-    --cream:hsl(30, 38%, 92%);
+img {
+	display: block;
 }
 
-body{
-    background-color: var(--cream);
+button {
+	display: block;
+	border: none;
 }
+
+:root {
+	--Green-500: hsl(158, 36%, 37%);
+	--Green-700: hsl(158, 42%, 18%);
+	--Black: hsl(212, 21%, 14%);
+	--Grey: hsl(228, 12%, 48%);
+	--cream: hsl(30, 38%, 92%);
+}
+
+body {
+	background-color: var(--cream);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	padding: 1rem;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	border-radius: 1rem;
+	margin-top: 10px;
+	background-color: white;
+	color: var(--Grey);
+	font-size: 14px;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	max-width: 800px;
+}
+
+.image {
+	border-radius: 1rem 1rem 0 0;
+}
+
+#desktop {
+	display: none;
+}
+
+#mobile {
+	border-radius: 1rem 1rem 0 0;
+	width: 100%;
+}
+
+.info {
+	min-height: 350px;
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	justify-content: space-between;
+}
+
+h1 {
+	font-size: 1em;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 10px;
+}
+
+.fraunces {
+	font-family: "Fraunces", sans-serif;
+}
+
+h2 {
+	font-weight: 700;
+	font-size: 2.3em;
+	color: var(--Black);
+}
+
+.info > p:first-of-type {
+	line-height: 1.5em;
+	font-size: 1.1em;
+}
+
+p.fraunces {
+	display: flex;
+}
+
+span {
+	display: inline-block;
+}
+
+.big {
+	color: var(--Green-500);
+	font-size: 2em;
+	font-weight: 700;
+}
+
+.small {
+	margin-left: 1rem;
+	text-decoration: line-through;
+	align-self: center;
+}
+
+.trolley {
+	background-image: url(/images/icon-cart.svg);
+	background-repeat: no-repeat;
+	height: 2em;
+	width: 2em;
+	background-position: center;
+}
+
+button {
+	background-color: var(--Green-500);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1em;
+	color: white;
+	border-radius: 1em;
+	width: 100%;
+	font-weight: 700;
+}
+
+button:hover {
+	background-color: var(--Green-700);
+	transition: background-color 500ms ease-in-out;
+}
+
+@media (width>630px) {
+	body {
+		padding: 3rem;
+	}
+
+	main {
+		flex-direction: row;
+		max-height: 800px;
+	}
+
+	.image {
+		border-radius: 1rem 0 0 1rem;
+		min-width: 50%;
+	}
+
+	#mobile {
+		display: none;
+	}
+
+	#desktop {
+		display: block;
+		border-radius: 1rem 0 0 1rem;
+		width: 100%;
+	}
+
+	.info > * {
+		margin: 1rem 0;
+	}
+
+	.info {
+		padding: 0em 1em;
+	}
+
+	h2 {
+		font-size: 4em;
+	}
+}
+
